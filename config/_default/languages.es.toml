@@ -1,0 +1,24 @@
+disabled = false
+languageCode = "es"
+languageName = "Español"
+weight = 2
+title = "TripleC Blog"
+
+[params]
+displayName = "ES"
+isoCode = "es"
+rtl = false
+dateFormat = "2 January 2006"
+description = "Retro gameblog"
+
+[params.author]     # ✅ correcto: tabla anidada
+name = "Carles Castillo Carré"
+image = "mupped.jpg"     
+headline = """
+Cojo un linea, la añado al **código fuente**, y ya son novecientas noventa y nueve las lineas que están sobrando
+"""
+bio = "Fundador de Modern Dot Games. Trabajo en Choco Charlie para Game Boy y otras lindeces."
+links = [
+  { x-twitter = "https://x.com/moderndotgames" },
+  { linkedin = "https://www.linkedin.com/in/carles-castillo-carre/" },
+]

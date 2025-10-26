@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on TripleC Blog</title>
+    <link>http://localhost:1313/en/tags/</link>
+    <description>Recent content in Tags on TripleC Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 Carles Castillo Carré</copyright>
+    <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Gameboy</title>
+      <link>http://localhost:1313/en/tags/gameboy/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/tags/gameboy/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Hardware</title>
+      <link>http://localhost:1313/en/tags/hardware/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/tags/hardware/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>History</title>
+      <link>http://localhost:1313/en/tags/history/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/tags/history/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Indiedev</title>
+      <link>http://localhost:1313/en/tags/indiedev/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/tags/indiedev/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Indidev</title>
+      <link>http://localhost:1313/en/tags/indidev/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/tags/indidev/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Lifehacks</title>
+      <link>http://localhost:1313/en/tags/lifehacks/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/tags/lifehacks/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Offtopic</title>
+      <link>http://localhost:1313/en/tags/offtopic/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/tags/offtopic/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TripleC Blog</title>
+    <link>http://localhost:1313/es/</link>
+    <description>Recent content on TripleC Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 Carles Castillo Carré</copyright>
+    <lastBuildDate>Fri, 17 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Buscando una salida, la ventana, los sprites y el scroll</title>
+      <link>http://localhost:1313/es/posts/gameboy-window-scroll/</link>
+      <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/es/posts/gameboy-window-scroll/</guid>
+      <description>De cómo me complique la vida aun más</description>
+      
+    </item>
+    
+    <item>
+      <title>Empujar bloques es... complicado</title>
+      <link>http://localhost:1313/es/posts/arquitectura-de-gameboy/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/es/posts/arquitectura-de-gameboy/</guid>
+      <description>Comprendiendo la arquitectura de Game Boy</description>
+      
+    </item>
+    
+    <item>
+      <title>Game Boy, la NES portátil perfecta</title>
+      <link>http://localhost:1313/es/posts/los-graficos-en-gameboy/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/es/posts/los-graficos-en-gameboy/</guid>
+      <description>Hacer juegos tipo puzzle en Game Boy, es difícil</description>
+      
+    </item>
+    
+    <item>
+      <title>Los inicios: El proyecto que nunca empieza</title>
+      <link>http://localhost:1313/es/posts/los-inicios-el-proyecto-que-nunca-empieza/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/es/posts/los-inicios-el-proyecto-que-nunca-empieza/</guid>
+      <description>De cómo tarde 7 años en empezar mi juego de Game Boy</description>
+      
+    </item>
+    
+  </channel>
+</rss>

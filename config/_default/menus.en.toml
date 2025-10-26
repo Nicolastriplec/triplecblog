@@ -1,0 +1,11 @@
+[[main]]
+none = "none"
+
+[[main]]
+name = "Posts"
+url = "/en/posts/"
+identifier = "6JADnDcDk3"
+weight = 9_999
+
+[[footer]]
+none = "none"

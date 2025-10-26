@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lifehacks on TripleC Blog</title>
+    <link>http://localhost:1313/es/tags/lifehacks/</link>
+    <description>Recent content in Lifehacks on TripleC Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>© 2025 Carles Castillo Carré</copyright>
+    <lastBuildDate>Fri, 17 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/es/tags/lifehacks/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Los inicios: El proyecto que nunca empieza</title>
+      <link>http://localhost:1313/es/posts/los-inicios-el-proyecto-que-nunca-empieza/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/es/posts/los-inicios-el-proyecto-que-nunca-empieza/</guid>
+      <description>De cómo tarde 7 años en empezar mi juego de Game Boy</description>
+      
+    </item>
+    
+  </channel>
+</rss>
