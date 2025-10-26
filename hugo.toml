@@ -34,10 +34,6 @@ disqusShortname = "nicolastriplec"  # Reemplaza con tu shortname de Disqus
   [[module.imports]]
     path = "github.com/nunocoracao/blowfish/v2"
 
-[services]
-  [services.disqus]
-    shortname = 'nicolastriplec"'
-
 [pagination]
   pagerSize = 100
 
