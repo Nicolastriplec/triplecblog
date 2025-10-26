@@ -37,7 +37,7 @@ jobs:
         run: hugo mod get
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --baseURL "https://triplec-blog.com"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
