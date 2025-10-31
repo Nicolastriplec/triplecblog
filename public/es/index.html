@@ -231,6 +231,129 @@
 
   
   
+    
+<script type="text/javascript">
+(function() {
+  
+  const AVAILABLE_LANGUAGES = ['en', 'es'];
+  const DEFAULT_LANGUAGE = 'en';
+  const STORAGE_KEY = 'userLanguagePreference';
+  const LANGUAGE_SET_KEY = 'languageDetected';
+
+  
+  function getCurrentLanguage() {
+    const path = window.location.pathname;
+    
+    if (path.startsWith('/es/') || path === '/es') {
+      return 'es';
+    }
+    
+    if (path.startsWith('/en/') || path === '/en' || path === '/') {
+      return 'en';
+    }
+    return null;
+  }
+
+  
+  function getBrowserLanguage() {
+    
+    const browserLang = (navigator.language || navigator.userLanguage || DEFAULT_LANGUAGE).toLowerCase();
+    
+    
+    const langCode = browserLang.split('-')[0];
+    
+    
+    if (AVAILABLE_LANGUAGES.includes(langCode)) {
+      return langCode;
+    }
+    
+    
+    return DEFAULT_LANGUAGE;
+  }
+
+  
+  function buildRedirectUrl(targetLang) {
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search;
+    const currentHash = window.location.hash;
+    
+    
+    let cleanPath = currentPath;
+    if (cleanPath.startsWith('/es/')) {
+      cleanPath = cleanPath.substring(3);
+    } else if (cleanPath.startsWith('/en/')) {
+      cleanPath = cleanPath.substring(3);
+    } else if (cleanPath === '/es' || cleanPath === '/en') {
+      cleanPath = '/';
+    }
+    
+    
+    let newPath = '';
+    if (targetLang === DEFAULT_LANGUAGE) {
+      
+      newPath = cleanPath === '/' ? '/' : cleanPath;
+    } else {
+      
+      newPath = cleanPath === '/' ? '/es/' : '/es' + cleanPath;
+    }
+    
+    return newPath + currentSearch + currentHash;
+  }
+
+  
+  function detectAndRedirect() {
+    
+    if (sessionStorage.getItem(LANGUAGE_SET_KEY)) {
+      return;
+    }
+
+    
+    const savedLanguage = localStorage.getItem(STORAGE_KEY);
+    
+    if (savedLanguage && AVAILABLE_LANGUAGES.includes(savedLanguage)) {
+      
+      const currentLang = getCurrentLanguage();
+      if (currentLang !== savedLanguage) {
+        const redirectUrl = buildRedirectUrl(savedLanguage);
+        if (redirectUrl !== window.location.pathname + window.location.search + window.location.hash) {
+          window.location.replace(redirectUrl);
+          return;
+        }
+      }
+      sessionStorage.setItem(LANGUAGE_SET_KEY, 'true');
+      return;
+    }
+
+    
+    const browserLang = getBrowserLanguage();
+    const currentLang = getCurrentLanguage();
+    
+    
+    if (currentLang !== browserLang) {
+      const redirectUrl = buildRedirectUrl(browserLang);
+      if (redirectUrl !== window.location.pathname + window.location.search + window.location.hash) {
+        
+        localStorage.setItem(STORAGE_KEY, browserLang);
+        window.location.replace(redirectUrl);
+        return;
+      }
+    }
+    
+    
+    if (currentLang) {
+      localStorage.setItem(STORAGE_KEY, currentLang);
+    }
+    
+    sessionStorage.setItem(LANGUAGE_SET_KEY, 'true');
+  }
+
+  
+  detectAndRedirect();
+})();
+</script>
+
+
+  
 
   
   

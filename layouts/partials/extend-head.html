@@ -1,0 +1,121 @@
+{{/* Script de detección de idioma del navegador - debe ejecutarse lo más temprano posible */}}
+<script type="text/javascript">
+(function() {
+  // Idiomas disponibles en el sitio
+  const AVAILABLE_LANGUAGES = ['en', 'es'];
+  const DEFAULT_LANGUAGE = 'en';
+  const STORAGE_KEY = 'userLanguagePreference';
+  const LANGUAGE_SET_KEY = 'languageDetected';
+
+  // Obtener el idioma actual de la URL
+  function getCurrentLanguage() {
+    const path = window.location.pathname;
+    // Si empieza con /es/, el idioma es español
+    if (path.startsWith('/es/') || path === '/es') {
+      return 'es';
+    }
+    // Si está en la raíz o empieza con /en/, es inglés
+    if (path.startsWith('/en/') || path === '/en' || path === '/') {
+      return 'en';
+    }
+    return null;
+  }
+
+  // Obtener el idioma preferido del navegador
+  function getBrowserLanguage() {
+    // Obtener el idioma del navegador
+    const browserLang = (navigator.language || navigator.userLanguage || DEFAULT_LANGUAGE).toLowerCase();
+    
+    // Extraer el código de idioma base (ej: 'es-ES' -> 'es')
+    const langCode = browserLang.split('-')[0];
+    
+    // Verificar si el idioma está disponible
+    if (AVAILABLE_LANGUAGES.includes(langCode)) {
+      return langCode;
+    }
+    
+    // Si no está disponible, devolver el idioma por defecto
+    return DEFAULT_LANGUAGE;
+  }
+
+  // Construir la URL de redirección
+  function buildRedirectUrl(targetLang) {
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search;
+    const currentHash = window.location.hash;
+    
+    // Remover cualquier prefijo de idioma existente
+    let cleanPath = currentPath;
+    if (cleanPath.startsWith('/es/')) {
+      cleanPath = cleanPath.substring(3);
+    } else if (cleanPath.startsWith('/en/')) {
+      cleanPath = cleanPath.substring(3);
+    } else if (cleanPath === '/es' || cleanPath === '/en') {
+      cleanPath = '/';
+    }
+    
+    // Construir la nueva URL
+    let newPath = '';
+    if (targetLang === DEFAULT_LANGUAGE) {
+      // Inglés: sin prefijo (raíz)
+      newPath = cleanPath === '/' ? '/' : cleanPath;
+    } else {
+      // Español: con prefijo /es/
+      newPath = cleanPath === '/' ? '/es/' : '/es' + cleanPath;
+    }
+    
+    return newPath + currentSearch + currentHash;
+  }
+
+  // Función principal de detección
+  function detectAndRedirect() {
+    // Solo ejecutar en la primera carga de la página
+    if (sessionStorage.getItem(LANGUAGE_SET_KEY)) {
+      return;
+    }
+
+    // Verificar si el usuario ya tiene una preferencia guardada
+    const savedLanguage = localStorage.getItem(STORAGE_KEY);
+    
+    if (savedLanguage && AVAILABLE_LANGUAGES.includes(savedLanguage)) {
+      // Usar el idioma guardado
+      const currentLang = getCurrentLanguage();
+      if (currentLang !== savedLanguage) {
+        const redirectUrl = buildRedirectUrl(savedLanguage);
+        if (redirectUrl !== window.location.pathname + window.location.search + window.location.hash) {
+          window.location.replace(redirectUrl);
+          return;
+        }
+      }
+      sessionStorage.setItem(LANGUAGE_SET_KEY, 'true');
+      return;
+    }
+
+    // Si no hay preferencia guardada, detectar del navegador
+    const browserLang = getBrowserLanguage();
+    const currentLang = getCurrentLanguage();
+    
+    // Solo redirigir si el idioma detectado es diferente al actual
+    if (currentLang !== browserLang) {
+      const redirectUrl = buildRedirectUrl(browserLang);
+      if (redirectUrl !== window.location.pathname + window.location.search + window.location.hash) {
+        // Guardar la preferencia detectada
+        localStorage.setItem(STORAGE_KEY, browserLang);
+        window.location.replace(redirectUrl);
+        return;
+      }
+    }
+    
+    // Guardar el idioma actual si no se redirige
+    if (currentLang) {
+      localStorage.setItem(STORAGE_KEY, currentLang);
+    }
+    
+    sessionStorage.setItem(LANGUAGE_SET_KEY, 'true');
+  }
+
+  // Ejecutar inmediatamente para evitar parpadeos
+  detectAndRedirect();
+})();
+</script>
+
